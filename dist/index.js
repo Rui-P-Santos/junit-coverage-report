@@ -37937,7 +37937,7 @@ const parseJunitXml = (junitContent) => {
 };
 
 const getTotal = (junitXml) => {
-  const testSuite = junitXml.testsuites.testsuite;
+  const testSuite = junitXml.testsuite;
   return {
     name: testSuite["@_name"],
     errors: testSuite["@_errors"],
@@ -37951,7 +37951,7 @@ const getTotal = (junitXml) => {
 
 const getFailures = (junitXml) => {
   let failures = [];
-  const testSuite = junitXml.testsuites.testsuite;
+  const testSuite = junitXml.testsuite;
   for (let i = 0; i < testSuite.testcase.length; i++) {
     const testcase = testSuite.testcase[i];
     if (testcase.failure) {
